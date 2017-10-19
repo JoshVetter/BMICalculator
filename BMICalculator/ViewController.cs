@@ -1,5 +1,4 @@
 ﻿using System;
-
 using UIKit;
 
 namespace BMICalculator
@@ -15,6 +14,16 @@ namespace BMICalculator
         {
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
+
+            calculateButton.TouchUpInside+= CalculateButton_TouchUpInside;
+        }
+
+        void CalculateButton_TouchUpInside(object sender, EventArgs e)
+        {
+            float height = float.Parse(heightTextField);
+            float weight = float.Parse(weightTextField);
+
+            float bmi = (height / (weight ));
         }
 
         public override void DidReceiveMemoryWarning()
