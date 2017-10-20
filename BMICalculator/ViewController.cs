@@ -20,10 +20,12 @@ namespace BMICalculator
 
         void CalculateButton_TouchUpInside(object sender, EventArgs e)
         {
-            float height = float.Parse(heightTextField);
-            float weight = float.Parse(weightTextField);
+            float height = float.Parse(heightTextField.Text);
+            float weight = float.Parse(weightTextField.Text);
 
-            float bmi = (height / (weight ));
+            float bmi = (weight / (height * height));
+
+            bmiLabel.Text = bmi.ToString();
         }
 
         public override void DidReceiveMemoryWarning()
